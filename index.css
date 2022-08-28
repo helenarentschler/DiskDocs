@@ -1,28 +1,44 @@
-header {
+/* Variaveis */
+
+:root {
+
+    /* Cores */
+    --roxo: #5271FF;
+    --azul: #1C2139;
+    --cinza: #EDEDED;
+    --branco: #FFF;
+
+    /* Telas */
+    --mobile: 480px;
+    --tablet: 768px;
+    --laptop: 1024px;
+    --desktop: 1200px;
+}
+
+/* Gerais ___________________________ */
+
+html {
     padding: 0;
 }
 
 body {
     margin: 0;
     padding: 0;
-    font-family: 'Inter', sans-serif;
-    font-size: 16px;
     line-height: 2rem;
-    color: #1C2139;
+    font-size: 16px;
+    font-family: 'Inter', sans-serif;
+    color: var(--azul);
 }
 
-header, main > *, footer {
+header, main > * {
     display: grid;    
     grid-template-columns: [inicio] 5% [primeira] 1fr [segunda] 1fr [terceira] 1fr [ultima] 5% [fim];
     align-items: center;
+    gap: 2rem;
 }
 
 header {
     position: relative;
-}
-
-header a {
-    text-decoration: none;
 }
 
 nav {
@@ -30,184 +46,436 @@ nav {
     align-self: end;
 }
 
-nav ul{
-    display: flex;
-    gap: 1.5rem;
-    justify-content: end;
-    align-items: flex-end;
-    padding: 0;
-    margin: 0;
-    list-style: none;
-}
-
-nav ul li {
-    display: block;
-    border-radius: 25px 25px 0px 0px;
-    padding: 1rem 1.5rem .5rem 1.5rem;
-    background-color: #5271FF;
-    color: #FFF;
-}
-
-ul {
-    list-style: none;
-    padding: 0;
-}
-
 footer {
-    grid-template-rows: 4fr 1fr;
+    display: grid;
+    grid-template-columns: [inicio] 5% [primeira] 1fr [segunda] 2fr [terceira] 3fr [quarta] 2fr [ultima] 5% [fim];
+    grid-template-rows: 2fr 1fr;
     justify-items: center;
     align-items: center;
-    background-color: #1C2139;
-    color: #FFF;
-}
-
-address {
-    grid-column: primeira / ultima;
-    grid-row: 2 / 3;
-    text-align: center;
-}
-
-#div-logo {
-    display: flex;
-    grid-column: primeira / segunda;
-    gap: 1.5rem;
-    padding: 1.5rem 0rem;
-    color: #5271FF;
-}
-
-#div-tel {
-    position: absolute;
-    top: 0;
-    right: 0;
-    padding: 1rem;
-    border-radius: 0px 0px 0px 25px;
-    background-color: #EDEDED;
-    color: #5271FF;
-}
-
-#section-banner {
-    box-shadow: inset 0px 12px 30px rgba(0, 0, 0, 0.5);
-    background-image: url(images/arte-entregador.jpg);
-    min-height: 400px;
-}
-
-#div-par {
-    grid-column: inicio / segunda;
-}
-
-#par-banner {
-    font-size: 2rem;
-    border-radius: 0px 25px 25px 0px;
-    background-color: #1C2139;
-    padding: 1.5rem;
-    color: #FFF;
-}
-
-#div-contratar {
-    display: flex;
-    flex-direction: column;
-    gap: 1rem;
-    text-align: center;
-    grid-column: terceira / ultima;
-}
-
-#div-contratar div {
-    color: #FFF;
-}
-
-#btn-contratar {
-    display: inline-block;
-    font-size: 1.5rem;
-    font-weight: 700;
-    color: #1C2139;
-    border-radius: 25px;
-    padding: 1.5rem 0rem;
-    text-decoration: none;
-    text-transform: uppercase;
-    background-color: #FFF;
-    filter: drop-shadow(9px 12px 30px rgba(0, 0, 0, 0.5));
-}
-
-#section-servicos {
-    grid-template-rows: 1fr 5fr;
-    background-image: url(images/abstrato.png);
-    min-height: 500px;
-}
-
-#section-servicos h2{
-    grid-column: segunda / terceira;
-    text-align: center;
-}
-
-#cards {
-    display: flex;
-    justify-content: center;
-    grid-column: primeira / ultima;
-    text-align: center;
-}
-
-.card-servico {
-    max-width: 350px;
-    filter: drop-shadow(6px 6px 12px rgba(0, 0, 0, 0.25));
-}
-
-.card-servico h3 {
-    background-color: #5271FF;
-    padding: 1rem;
-    margin: 0;
-    border-radius: 25px 25px 0px 0px;
-    color: #FFF;
-}
-
-.card-imagem  {
-    height: 80px;
-    background-image: url(images/avulso.png);
-    background-size: cover;
-}
-
-.card-lista {
-    background-color: #FFF;
-    padding: 1rem;
-    border-radius: 0px 0px 25px 25px ;
-}
-
-#section-vantagens {
-    background-color: #5271FF;
-    min-height: 400px;
-}
-
-#lista-vantagens {
-    grid-column: primeira / segunda;
-    align-self: center;
-    background-color: #5271FF;
-    color: #FFF;
-}
-
-#img-vantagem {
-    grid-column: segunda / fim;
-    height: 100%;
-    background-image: url(images/foto-homem.jpg);
-}
-
-#section-calculadora {
-    min-height: 300px;
-}
-
-#calculadora {
-    grid-column: primeira / terceira;
-    justify-self: center;
-}
-
-#resultado {
-    grid-column: terceira / ultima;
-    justify-self: start;
-}
-
-#footer-logo {
-    justify-self: start;
-    display: flex;
     gap: 2rem;
-    justify-content: space-between;
-    align-items: center;
-    grid-column: primeira / segunda;
+    padding-top: 1.5rem;
+    color: var(--branco);
+    background-color: var(--azul);
+}
+
+    /* Elementos ___________________________ */
+
+    header a {
+        text-decoration: none;
+    }
+
+    nav ul{
+        display: flex;
+        justify-content: end;
+        align-items: flex-end;
+        gap: 1.5rem;
+        padding: 0;
+        margin: 0;
+        list-style: none;
+    }
+
+    nav ul li {
+        display: block;
+        min-width: 60px;
+        border-radius: 25px 25px 0px 0px;
+        padding: .5rem 1rem .1rem 1rem;
+        color: var(--branco);
+        background-color: var(--roxo);
+        transition: padding-bottom 1s;
+    }
+
+    nav ul li:hover, nav ul li:focus  {
+        padding-bottom: 1.5rem;
+    }
+
+    ul {
+        padding: 0;
+        line-height: 3rem;
+        list-style: none;
+    }
+
+    h1 {
+        font-family: 'League Spartan', sans-serif;
+        color: var(--roxo);
+    }
+
+    h2 {
+        margin-bottom: 1rem;
+    }
+
+    input {
+        width: 220px;
+        border: 0;
+        padding: .5rem;
+        padding-left: 1rem;
+        border-radius: 100px;
+        background-color: var(--cinza);
+    }
+
+    button {
+        border: 0;
+        padding: 12px;
+        background-color: transparent;
+        background-image: url(images/check.svg);
+        background-repeat: no-repeat;
+        cursor: pointer;
+    }
+
+
+    address {
+        grid-column: primeira / ultima;
+        grid-row: 2 / 3;
+        text-align: center;
+        justify-self: center;
+    }
+
+        /* Id's ___________________________ */
+
+        #div-logo {
+            grid-column: primeira / segunda;
+            padding: 1.5rem 0rem;
+        }
+
+        #div-logo a {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        #div-tel {
+            position: absolute;
+            top: 0;
+            right: 0;
+            padding: .5rem;
+            border-radius: 0px 0px 0px 25px;
+            font-weight: 700;
+            color: var(--roxo);
+            background-color: var(--cinza);
+        }
+
+        #div-tel span {
+            display: block;
+            padding-left: 35px;
+            background-image: url(images/phone-roxo.svg);
+            background-repeat: no-repeat;
+            background-position: left;
+            background-size:auto;
+        }
+
+        #section-banner {
+            min-height: 400px;
+            box-shadow: inset 0px 12px 30px rgba(0, 0, 0, 0.5);
+            background-image: url(images/arte-entregador.jpg);
+        }
+
+        #div-par {
+            grid-column: inicio / segunda;
+        }
+
+        #div-par span {
+            font-weight: 500;
+        }
+
+        #par-banner {
+            padding: 2.5rem;
+            border-radius: 0px 25px 25px 0px;
+            font-size: 2rem;
+            font-family: 'League Spartan', sans-serif;
+            font-weight: 100;
+            color: var(--branco);
+            background-color: var(--azul);
+        }
+
+        #div-contratar {
+            grid-column: terceira / ultima;
+            display: flex;
+            flex-direction: column;
+            gap: 1rem;
+            text-align: center;
+        }
+
+        #div-contratar div {
+            color: var(--branco);
+        }
+
+        #btn-contratar {
+            display: inline-block;
+            border-radius: 25px;
+            padding: 1.5rem;
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--azul);
+            background-color: var(--branco);
+            text-decoration: none;
+            text-transform: uppercase;
+            filter: drop-shadow(9px 12px 30px rgba(0, 0, 0, 0.5));
+            transition: transform 1s;
+        }
+
+        #btn-contratar:hover, #btn-contratar:focus {
+            transform: scale(1.2);
+        }
+
+        #section-servicos {
+            min-height: 500px;
+            padding: 1.5rem 0;
+            grid-template-rows: 1fr 5fr;
+            background-image: url(images/abstrato.png);
+        }
+
+        #section-servicos h2{
+            grid-column: segunda / terceira;
+            text-align: center;
+        }
+
+        #cards {
+            grid-column: primeira / ultima;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 2rem;
+            justify-content: space-evenly;
+            text-align: center;
+        }
+
+        #avulso {
+            background-image: url(images/avulso.png);
+        }
+
+        #contrato {
+            background-image: url(images/contrato.png);
+        }
+
+        #van {
+            background-image: url(images/van.png);
+        }
+
+        .card-lista {
+            padding: 1rem;
+            border-radius: 0px 0px 25px 25px ;
+            background-color: var(--branco);
+        }
+
+        #section-vantagens {
+            min-height: 400px;
+            background-color: var(--roxo);
+        }
+
+        #lista-vantagens {
+            grid-column: primeira / segunda;
+            align-self: center;
+            padding: 1.5rem 0;
+            color: var(--branco);
+            background-color: var(--roxo);
+        }
+
+        #lista-vantagens a {
+            color: var(--branco);
+        }
+
+        #img-vantagem {
+            grid-column: segunda / fim;
+            height: 100%;
+            width: 100%;
+            background-image: url(images/foto-homem.jpg);
+            background-size: cover;
+            background-repeat: no-repeat;
+        }
+
+        #section-calculadora {
+            grid-template-columns: [inicio] 5% [primeira] 1fr [segunda] 1fr [ultima] 5% [fim];
+            justify-items: center;
+            align-items: center;
+            gap: 1rem;
+            min-height: 300px;
+        }
+
+        #calculadora {
+            grid-column: primeira / segunda;
+            justify-self: center;
+        }
+
+        #div-input {
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        #resultado {
+            grid-column: segunda / ultima;
+        }
+
+        #footer-logo {
+            grid-column: primeira / segunda;
+            justify-self: start;
+            display: flex;
+            justify-content: space-between;
+            gap: 1.5rem;
+            align-items: center;
+        }
+
+        #footer-logo img {
+            max-width: 80px;
+        }
+
+        #footer-logo span {
+            font-size: 2rem;
+            font-family: 'League Spartan', sans-serif;
+            color: var(--branco);
+        }
+
+        #midias li, #endereco h3, #contato h3, #contato p{
+            padding-left: 30px;
+            background-repeat: no-repeat;
+            background-position: left;
+            background-size:auto;
+        }
+
+        #contato h3 {
+            background-image: url(images/phone.svg);
+        }
+
+        #contato p {
+            background-image: url(images/whatsapp.svg);
+        }
+
+        #endereco h3{
+            background-image: url(images/marker.svg);
+        }
+
+        #midias a {
+            color: var(--branco);
+            text-decoration: none;
+        }
+
+        #insta {
+            background-image: url(images/insta.svg);
+        }
+
+        #linkedin {
+            background-image: url(images/linkedin.svg);
+        }
+
+        #email {
+            background-image: url(images/envelope.svg);
+        }
+
+
+            /* Classes ___________________________ */
+
+            .card-servico {
+                max-width: 350px;
+                filter: drop-shadow(6px 6px 12px rgba(0, 0, 0, 0.25));
+                transition: transform 1s;
+            }
+
+            .card-servico:hover, .card-servico:focus{ 
+                transform: rotate(-0.03turn) scale(1.15);
+            }
+
+            .card-servico h3 {
+                padding: 1rem;
+                margin: 0;
+                border-radius: 25px 25px 0px 0px;
+                color: var(--branco);
+                background-color: var(--roxo);
+            }
+
+            .card-imagem  {
+                height: 80px;
+                background-size: cover;
+            }
+
+/* Querys ___________________________ */
+
+@media screen and (max-width: 1200px) {
+
+    footer {
+        grid-template-columns: [inicio] 5% [primeira] 1fr [segunda] 1fr [ultima] 5% [fim];
+        grid-template-rows: 2fr 2fr 1fr;
+        align-content: center;
+        justify-items: baseline;
+        gap: 3rem;
+    }
+
+    #footer-logo {
+        grid-column: primeira / segunda;
+        grid-row: 1 / 2;
+    }
+
+    #contato {
+        grid-column: segunda / ultima;
+        grid-row: 1 / 2;
+    }
+
+    #endereco {
+        grid-column: primeira / segunda;
+        grid-row: 2 / 3;
+    }
+
+    #midias {
+        grid-column: segunda / ultima;
+        grid-row: 2 / 3;
+    }
+
+    address {
+        grid-column: primeira / ultima;
+        grid-row: 3 / 4;
+    }
+}
+
+@media screen and (max-width: 1024px) {
+    header {  
+        grid-template-columns: [inicio] 5% [primeira] 1fr [segunda]  5% [fim];
+        grid-template-rows: 2fr 1fr;
+        justify-items: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    div-logo, nav {
+        grid-column: primeira / segunda;
+    }
+
+    nav {
+        grid-row: 2 / 3;
+    }
+    
+    #section-vantagens, #section-banner {
+        grid-template-columns: [inicio] 5% [primeira] 1fr [segunda]  1fr [ultima] 5% [fim];
+        justify-items: center;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    #img-vantagem {
+        grid-column: segunda / fim;
+    }
+
+    #div-par {
+        grid-column: inicio / segunda;
+    }
+
+    #div-contratar {
+        grid-column: segunda / ultima;
+    }
+}
+
+@media screen and (max-width: 768px)  {
+    body {
+        font-size: 14px;
+    }
+}
+
+@media screen and (max-width: 635px)  {
+
+    header {  
+        grid-template-columns: [inicio] 5% [primeira] 1fr [segunda]  5% [fim];
+        grid-template-rows: 1fr;
+        justify-items: center;
+        align-items: center;
+        gap: 1rem;
+    }
+
+    nav {
+        display: none;
+    }
 }
