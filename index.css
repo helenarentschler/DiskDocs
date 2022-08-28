@@ -127,6 +127,7 @@ footer {
         grid-row: 2 / 3;
         text-align: center;
         justify-self: center;
+        padding-bottom: 2rem;
     }
 
         /* Id's ___________________________ */
@@ -165,6 +166,9 @@ footer {
             min-height: 400px;
             box-shadow: inset 0px 12px 30px rgba(0, 0, 0, 0.5);
             background-image: url(images/arte-entregador.jpg);
+            background-position: center;
+            background-repeat: no-repeat;
+            background-size: cover;
         }
 
         #div-par {
@@ -278,6 +282,7 @@ footer {
             background-image: url(images/foto-homem.jpg);
             background-size: cover;
             background-repeat: no-repeat;
+            background-position: top center;
         }
 
         #section-calculadora {
@@ -286,6 +291,7 @@ footer {
             align-items: center;
             gap: 1rem;
             min-height: 300px;
+            padding: 1.5rem 0;
         }
 
         #calculadora {
@@ -423,6 +429,7 @@ footer {
 }
 
 @media screen and (max-width: 1024px) {
+
     header {  
         grid-template-columns: [inicio] 5% [primeira] 1fr [segunda]  5% [fim];
         grid-template-rows: 2fr 1fr;
@@ -460,8 +467,64 @@ footer {
 }
 
 @media screen and (max-width: 768px)  {
+
     body {
         font-size: 14px;
+    }
+
+    #section-vantagens, #section-calculadora {
+        grid-template-columns: [inicio] 5% [primeira] 1fr [ultima] 5% [fim];
+        grid-template-rows: 1fr 1fr;
+        justify-items: center;
+        align-items: center;
+        gap: 3rem;
+    }
+
+    #section-vantagens {
+        grid-template-rows: 2fr 1fr;
+    }
+
+    #lista-vantagens, #calculadora {
+        grid-column: primeira / ultima;
+        grid-row: 1 / 2;
+    }
+
+    #img-vantagem, #resultado {
+        grid-column: inicio / fim;
+        grid-row: 2 / 3;
+    }
+
+    footer {
+        grid-template-columns: [inicio] 5% [primeira] 1fr [ultima] 5% [fim];
+        grid-template-rows: 3fr 3fr 3fr 3fr 1fr;
+        align-content: center;
+        justify-items: start;
+        gap: 3rem;
+    }
+
+    #footer-logo {
+        grid-column: primeira / ultima;
+        grid-row: 1 / 2;
+    }
+
+    #contato {
+        grid-column: primeira / ultima;
+        grid-row: 2 / 3;
+    }
+
+    #endereco {
+        grid-column: primeira / ultima;
+        grid-row: 3 / 4;
+    }
+
+    #midias {
+        grid-column: primeira / ultima;
+        grid-row: 4 / 5;
+    }
+
+    address {
+        grid-column: primeira / ultima;
+        grid-row: 6 / 7;
     }
 }
 
@@ -477,5 +540,40 @@ footer {
 
     nav {
         display: none;
+    }
+
+    #par-banner {
+        font-size: 1.5rem;
+    }
+
+    #btn-contratar {
+        font-size: 1rem;
+    }
+
+     #section-banner {
+        grid-template-columns: [inicio] 5% [primeira] 1fr  [ultima] 5% [fim];
+        grid-template-rows: 1fr;
+        justify-items: center;
+        align-items: center;
+        gap: 3rem;
+        padding: 1.5rem 0;
+    }
+
+    #div-par {
+        grid-column: inicio / ultima;
+    }
+
+    #div-contratar  {
+        grid-column: primeira / ultima;
+    }
+
+    #div-tel {
+        display: none;
+    }
+}
+
+@media screen and (max-width: 480px)  {
+    input {
+        width: 150px;
     }
 }
